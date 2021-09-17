@@ -48,6 +48,11 @@ class ActivityItem
      */
     private ?string $link;
 
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private int $sort = 0;
+
     public function setId(int $id): self
     {
         $this->id = $id;
@@ -128,6 +133,18 @@ class ActivityItem
     public function setLink(?string $link): self
     {
         $this->link = $link;
+
+        return $this;
+    }
+
+    public function getSort(): ?int
+    {
+        return $this->sort;
+    }
+
+    public function setSort(int $sort): self
+    {
+        $this->sort = $sort;
 
         return $this;
     }
