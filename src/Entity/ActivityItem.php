@@ -16,37 +16,37 @@ class ActivityItem
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      */
-    private $id;
+    private ?int $id;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $title;
+    private string $title;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $imageUrl;
+    private ?string $imageUrl;
 
     /**
      * @ORM\Column(type="text", nullable=true)
      */
-    private $description;
+    private ?string $description;
 
     /**
      * @ORM\Column(type="integer")
      */
-    private $type = PrototypeActivityType::ARTICLE;
+    private int $type = PrototypeActivityType::ARTICLE;
 
     /**
      * @ORM\Column(type="array")
      */
-    private $labels = [];
+    private array $labels = [];
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $link;
+    private ?string $link;
 
     public function setId(int $id): self
     {
